@@ -1,6 +1,5 @@
-// import models
-const Product = require("./Product");
 const Category = require("./Category");
+const Product = require("./Product");
 const Tag = require("./Tag");
 const ProductTag = require("./ProductTag");
 
@@ -17,14 +16,14 @@ Category.hasMany(Product, {
 // Products belongToMany Tags (through ProductTag)
 Product.belongsToMany(Tag, {
   through: ProductTag,
-  as: "product_tag",
+  as: "product_tags",
   foreignKey: "product_id",
 });
 
 // Tags belongToMany Products (through ProductTag)
 Tag.belongsToMany(Product, {
   through: ProductTag,
-  as: "Product_tag",
+  as: "Product_tags",
   foreignKey: "tag_id",
 });
 
